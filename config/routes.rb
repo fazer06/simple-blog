@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :articles
-  root 'welcome#index'
+	root 'welcome#index'
+
+	resources :articles do
+		# nested routes
+		resources :comments
+	end
 
 end
