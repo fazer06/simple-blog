@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
 
 	def index
 		@articles = Article.all
+		@tags = Tag.all
 	end
 
 	def new
@@ -47,7 +48,7 @@ class ArticlesController < ApplicationController
 
 		# http://weblog.rubyonrails.org/2012/3/21/strong-parameters/
 		def article_params 
-			params.require(:article).permit(:title, :body)
+			params.require(:article).permit(:title, :body, :tag_list)
 		end
 
 end

@@ -1,4 +1,12 @@
 <p>Title: <%= @article.title %></p>
+
+<p>
+  Tags:
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+
 <p>Body:  <%= @article.body %></p>
 
 <h2>Comments</h2>

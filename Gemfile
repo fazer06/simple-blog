@@ -14,7 +14,7 @@ group :development, :test do
 	gem 'sqlite3'
 	gem 'byebug'
 	gem 'web-console', '~> 2.0'
-	gem 'annotate', '~> 2.7'
+	gem 'annotate', '~> 2.7' # rails g annotate:install
 	gem 'coffee-script-source', '1.8.0'
 end
 
