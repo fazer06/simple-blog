@@ -1,21 +1,29 @@
 # The Odin Project: A Simple Blog
-A simple blog that was created in the Getting Started with Rails intro section of the Rails Guides, but with a few improvements from myself, most of which are not done yet!
+A simple blog that was created using the Getting Started with Rails intro section of the Rails Guides, but with a few additions from myself.
 
-- Includes Bootstrap
-- Includes font-awesome
+## Additions
+
+- Bootstrap
+- font-awesome
+- Devise
+- Tagging
+- Articles view counter
+- 3 most popular articles
 
 ## Todo
 
 - Add all the bootstrap classes
-- Add Devise
+- Categories
+- Image Upload
 
 ## Database Structure
 
-### User (:TODO:)
+### User
 
-- username:string 	 	[unique, 25  chars max,  present]
-- email:string 		 	[unique, 255 chars max,  present]
-- password:string 	 	[6 chars min, present]
+- first_name:string 	[present]
+- last_name:string 		
+- email:string 		 	[present]
+- password:string 	 	[present]
 
 - has_many :articles 
 - has_many :comments
