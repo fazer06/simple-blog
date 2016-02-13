@@ -8,6 +8,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :integer
+#  view_count :integer
 #
 
 class Article < ActiveRecord::Base
@@ -35,6 +36,10 @@ class Article < ActiveRecord::Base
 		tag_names = tags_string.split(",").collect{|s| s.strip.downcase}.uniq
 		new_or_found_tags = tag_names.collect { |name| Tag.find_or_create_by(name: name) }
 		self.tags = new_or_found_tags
+	end
+
+	def increase_view_counter
+		update_attributes(:view_count => view_count + 1)
 	end
 
 end

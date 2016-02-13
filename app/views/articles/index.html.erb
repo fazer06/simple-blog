@@ -41,4 +41,21 @@
 			<% end %>
 		</tr>
 	<% end %>
+
+</table>
+
+<br>
+
+<h3>Top 3 Most Popular Articles</h3>
+
+<table>
+	<tr>
+		<th>Title</th>
+	</tr>
+
+	<% @popular_articles.each do |popular| %>
+		<tr>
+			<td><%= link_to popular.title, popular %></td>
+		</tr>
+	<% end %>
 </table>

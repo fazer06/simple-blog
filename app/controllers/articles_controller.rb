@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
 
 	def index
 		@articles = Article.all
+		@popular_articles = Article.order('articles.view_count DESC').limit(3)
 		@tags = Tag.all
 	end
 
@@ -22,6 +23,8 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = Article.find(params[:id])
+		# Increment the counter using the increase_view_counter method
+		@article.increment!(:view_count)
 	end
 
 	def edit

@@ -1,6 +1,7 @@
 # == Route Map
 #
 #                   Prefix Verb   URI Pattern                                       Controller#Action
+#                     root GET    /                                                 welcome#index
 #         new_user_session GET    /users/sign_in(.:format)                          devise/sessions#new
 #             user_session POST   /users/sign_in(.:format)                          devise/sessions#create
 #     destroy_user_session DELETE /users/sign_out(.:format)                         devise/sessions#destroy
@@ -16,7 +17,6 @@
 #                          PATCH  /users(.:format)                                  registrations#update
 #                          PUT    /users(.:format)                                  registrations#update
 #                          DELETE /users(.:format)                                  registrations#destroy
-#                     root GET    /                                                 welcome#index
 #         article_comments GET    /articles/:article_id/comments(.:format)          comments#index
 #                          POST   /articles/:article_id/comments(.:format)          comments#create
 #      new_article_comment GET    /articles/:article_id/comments/new(.:format)      comments#new

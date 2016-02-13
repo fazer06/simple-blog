@@ -8,7 +8,9 @@
   <% end %>
 </p>
 
-<p>Posted By: <%= @article.user.first_name %></p>
+<p>Posted By: <%= @article.user.first_name %> 
+   and viewed <%= @article.view_count %> times
+</p>
 
 <h2>Comments</h2>
 <%= render @article.comments %>
