@@ -38,7 +38,7 @@ A simple blog that was created in the Getting Started with Rails intro section o
 - commenter:string   	[present]
 - body:text 		 	[10 chars min, present]
 - user_id:integer    	[present]
-- post_id:integer    	[present]
+- article_id:integer    [present]
 
 - belongs_to :user
 - belongs_to :article

@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
 		# We can use this because of the article_id in the comment table
 		@article = Article.find(params[:article_id])
 		@comment = @article.comments.create(comment_params)
+		@comment.user = User.find(current_user.id)
+  		@comment.save
 		redirect_to article_path(@article)
 	end
 

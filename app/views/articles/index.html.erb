@@ -1,3 +1,12 @@
+<% if user_signed_in? %>
+	<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+	<%= current_user.first_name %>
+<% else %>
+	<%= link_to 'Sign In', new_user_session_path %>
+<% end %>
+
+
+
 <h1>Tag Cloud</h1>
 
 <div class="tag-cloud">
@@ -7,7 +16,11 @@
 </div>
 
 <h1>Listing articles</h1>
-<%= link_to 'New Article', new_article_path %>
+
+<% if user_signed_in? %>
+	<%= link_to 'New Article', new_article_path %>
+<% end %>
+
 <table>
 	<tr>
 		<th>Title</th>
@@ -19,8 +32,13 @@
 			<td><%= article.title %></td>
 			<td><%= article.body %></td>
 			<td><%= link_to 'Show', article_path(article) %></td>
-      		<td><%= link_to 'Edit', edit_article_path(article) %></td> 
-      		<td><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are You Sure?' } %></td>
+
+			<% if user_signed_in? && article.user == current_user %>
+	      		<td><%= link_to 'Edit', edit_article_path(article) %></td> 
+	      		<td><%= link_to 'Delete', article_path(article), 
+	      			method: :delete, data: { confirm: 'Are You Sure?' } %>
+	      		</td>
+			<% end %>
 		</tr>
 	<% end %>
 </table>
