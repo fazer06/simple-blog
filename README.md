@@ -25,8 +25,10 @@ A simple blog that was created in the Getting Started with Rails intro section o
 - title:string 		 	[5 chars min, present]
 - body:text 		 	[10 chars min, present]
 - user_id:integer 	 	[present]
+- category_id:integer 	[present]
 
 - belongs_to :user
+- belongs_to :category
 - has_many :comments
 - has_many :taggings
 - has_many :tags, through: :taggings
@@ -40,6 +42,12 @@ A simple blog that was created in the Getting Started with Rails intro section o
 
 - belongs_to :user
 - belongs_to :article
+
+### Category
+
+- name:string 			[present]
+
+- has_many :articles
 
 ### Tag
 
