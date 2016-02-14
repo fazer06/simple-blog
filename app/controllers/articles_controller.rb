@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
 
 		# http://weblog.rubyonrails.org/2012/3/21/strong-parameters/
 		def article_params 
-			params.require(:article).permit(:title, :body, :tag_list)
+			params.require(:article).permit(:title, :body, :category_id, :tag_list)
 		end
 
 end

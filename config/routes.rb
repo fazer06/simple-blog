@@ -41,6 +41,14 @@
 #                          PATCH  /tags/:id(.:format)                               tags#update
 #                          PUT    /tags/:id(.:format)                               tags#update
 #                          DELETE /tags/:id(.:format)                               tags#destroy
+#                categorys GET    /categorys(.:format)                              categorys#index
+#                          POST   /categorys(.:format)                              categorys#create
+#             new_category GET    /categorys/new(.:format)                          categorys#new
+#            edit_category GET    /categorys/:id/edit(.:format)                     categorys#edit
+#                 category GET    /categorys/:id(.:format)                          categorys#show
+#                          PATCH  /categorys/:id(.:format)                          categorys#update
+#                          PUT    /categorys/:id(.:format)                          categorys#update
+#                          DELETE /categorys/:id(.:format)                          categorys#destroy
 #
 
 Rails.application.routes.draw do
@@ -52,4 +60,5 @@ Rails.application.routes.draw do
 		resources :comments
 	end
 	resources :tags
+	resources :categorys
 end

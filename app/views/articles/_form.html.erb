@@ -13,6 +13,12 @@
       </ul>
     </div>
   <% end %>
+
+
+	<%= f.label :name, 'Category' %>
+	<%= f.collection_select :category_id, 
+		Category.all, :id, :name, 
+		{ include_blank: "Choose a Category" }, class: 'form-control'%>
  
 	<p>
 		<%= f.label :title %><br>

@@ -2,19 +2,21 @@
 #
 # Table name: articles
 #
-#  id         :integer          not null, primary key
-#  title      :string
-#  body       :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  user_id    :integer
-#  view_count :integer
+#  id          :integer          not null, primary key
+#  title       :string
+#  body        :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :integer
+#  view_count  :integer
+#  category_id :integer
 #
 
 class Article < ActiveRecord::Base
 	
 	belongs_to :user
-	has_many :comments
+	belongs_to :category, counter_cache: true
+	has_many :comments, dependent: :destroy
 	has_many :taggings
 
 	# An article has a list of tags through the relationship of taggings
@@ -24,6 +26,7 @@ class Article < ActiveRecord::Base
     too_short: "%{count} characters is the maximum allowed" }
 
 	validates :body,  presence: true, length: { minimum: 10 }
+	validates :category_id, presence: true
 
 	validates_associated :comments
 
