@@ -7352,6 +7352,11 @@ fieldset[disabled] .btn-danger.active {
 .navbar-brand {
     padding: 8px 15px 0px 15px;
 }
+.error_explanation {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
 /*!
  *  http://anotheruiguy.roughdraft.io/7379570-custom-web-fonts-and-the-rails-asset-pipeline
  *  Font Awesome 4.4.0 by @davegandy - http://fontawesome.io - @fontawesome

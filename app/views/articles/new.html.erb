@@ -1,5 +1,9 @@
-<h1>Add a new article</h1>
+<h1>Add an Article</h1>
 
-<%= render 'form' %>
+<%= form_for(@article) do |f| %>
+	<%= render 'fields', f: f %>
+<% end %>
 
-<%= link_to 'Back', articles_path %>
+<%= link_to articles_path, class: 'btn btn-default' do %>
+	Back <i class="fa fa-chevron-left"></i>
+<% end %>

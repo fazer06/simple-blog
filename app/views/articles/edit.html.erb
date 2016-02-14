@@ -1,5 +1,9 @@
 <h1>Editing article</h1>
- 
-<%= render 'form' %>
- 
-<%= link_to 'Back', articles_path %>
+
+<%= form_for(@article) do |f| %>
+	<%= render 'fields', f: f %>
+<% end %>
+
+<%= link_to articles_path, class: 'btn btn-default' do %>
+	Back <i class="fa fa-chevron-left"></i>
+<% end %>

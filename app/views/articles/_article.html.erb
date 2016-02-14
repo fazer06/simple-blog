@@ -1,0 +1,28 @@
+<li class="media list-group-item">
+    <p class="media-left">
+      Viewed: <%= article.view_count %> times
+    </p>
+    <div class="media-body">
+      <div class="media-heading">
+        <small class="pull-right">
+            Viewed: <%= article.view_count %> times
+            <% if user_signed_in? && article.user == current_user %>
+              | <%= link_to "delete", article, method: :delete,
+                                            data: { confirm: "You sure?" } %>
+              <% end %>
+        </small>
+        <h5>
+          Posted By: <%= article.user.first_name %> 
+          <%= "#{time_ago_in_words(article.created_at)} ago" %>
+        </h5>
+      </div>
+      <h3><%= link_to article.title, article %></h3>
+
+      <p><%= truncate(simple_format(article.body), escape: false, length: 600) %></p>
+
+      <%= link_to article_path(article), class: "btn btn-sm btn-primary" do %>
+        Read More <span class="fa fa-arrow-right"></span>
+      <% end %>
+
+    </div>
+</li>
