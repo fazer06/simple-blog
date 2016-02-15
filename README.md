@@ -1,6 +1,9 @@
 # The Odin Project: A Simple Blog
 A simple blog that was created using the Getting Started with Rails intro section of the Rails Guides, but with a few additions from myself.
 
+- https://github.com/JumpstartLab/blogger
+- https://github.com/JumpstartLab/blogger_advanced
+
 ## Additions
 
 - Bootstrap
@@ -14,7 +17,6 @@ A simple blog that was created using the Getting Started with Rails intro sectio
 
 ## Todo
 
-- Add all the bootstrap classes
 - Image Upload
 
 ## Database Structure
